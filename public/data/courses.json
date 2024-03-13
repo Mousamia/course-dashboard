@@ -1,0 +1,75 @@
+[
+    {
+      "course_id": "101",
+      "course_name": "Introduction to Artificial Intelligence",
+      "instructor": "Dr. Lisa Johnson",
+      "credits": 3,
+      "price": "$199",
+      "schedule": "Mon/Wed/Fri 9:00 AM - 10:30 AM"
+    },
+    {
+      "course_id": "201",
+      "course_name": "Machine Learning Fundamentals",
+      "instructor": "Prof. Mark Davis",
+      "credits": 4,
+      "price": "$249",
+      "schedule": "Tue/Thu 1:00 PM - 2:30 PM"
+    },
+    {
+      "course_id": "301",
+      "course_name": "Deep Learning and Neural Networks",
+      "instructor": "Dr. Emily Smith",
+      "credits": 4,
+      "price": "$299",
+      "schedule": "Mon/Wed/Fri 11:00 AM - 12:30 PM"
+    },
+    {
+      "course_id": "401",
+      "course_name": "Natural Language Processing",
+      "instructor": "Prof. Michael Johnson",
+      "credits": 3,
+      "price": "$199",
+      "schedule": "Tue/Thu 9:00 AM - 10:30 AM"
+    },
+    {
+      "course_id": "501",
+      "course_name": "Computer Vision",
+      "instructor": "Dr. Sarah Lee",
+      "credits": 4,
+      "price": "$249",
+      "schedule": "Mon/Wed/Fri 2:00 PM - 3:30 PM"
+    },
+    {
+      "course_id": "601",
+      "course_name": "Reinforcement Learning",
+      "instructor": "Prof. Kevin Clark",
+      "credits": 3,
+      "price": "$199",
+      "schedule": "Tue/Thu 11:00 AM - 12:30 PM"
+    },
+    {
+      "course_id": "701",
+      "course_name": "AI Ethics and Responsible AI",
+      "instructor": "Dr. Jennifer White",
+      "credits": 3,
+      "price": "$199",
+      "schedule": "Mon/Wed/Fri 10:00 AM - 11:30 AM"
+    },
+    {
+      "course_id": "801",
+      "course_name": "Advanced AI Algorithms",
+      "instructor": "Prof. Robert Harris",
+      "credits": 4,
+      "price": "$249",
+      "schedule": "Tue/Thu 2:00 PM - 3:30 PM"
+    },
+    {
+      "course_id": "901",
+      "course_name": "AI Applications in Robotics",
+      "instructor": "Dr. Amanda Wilson",
+      "credits": 3,
+      "price": "$199",
+      "schedule": "Mon/Wed 3:00 PM - 4:30 PM, Fri 4:00 PM - 5:30 PM"
+    }
+  ]
+  
