@@ -1,17 +1,24 @@
 
 import './App.css'
+import CourseQuantity from './components/CourseQuantity'
 import Courses from './components/Courses'
 
 function App() {
 
   return (
     <>
-
-      <div className="container grid grid-cols-4 ">
-        <div className='col-span-3  bg-sky-700'>
+        {/* Available Courses */}
+      <div className="container grid md:grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 ">
+        <div className='col-span-3'>
+          <h2 className="text-center text-3xl">Available Courses</h2>
           <Courses></Courses>
         </div>
-        <div>Course Quantity</div>
+
+      {/* Course Quantity */}
+
+        <div>
+          <CourseQuantity></CourseQuantity>
+        </div>
       </div>
 
     </>
