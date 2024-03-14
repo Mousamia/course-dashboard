@@ -3,25 +3,29 @@
 import React, { useEffect, useState } from 'react';
 import Course from './Course';
 
-const Courses = ({ priceCalc }) => {
+const Courses = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        const setCourses = async () => {
-            const response = await fetch('/public/data/courses.json')
-            const json = await response.json()
-            console.log(response.ok)
-            if (response.ok) {
-                setCourses(json)
+        const fetchData = async () => {
+          try {
+            const response = await fetch('/public/data/courses.json');
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
             }
-        }
-
-        setCourses()
-    }, [])
+            const jsonData = await response.json();
+            setCourses(jsonData);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData(); // Call the async function
+      }, []);
     return (
         <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-1'>
-            {
-                courses.map(course => <Course course={course} priceCalc={priceCalc}></Course>)
-            }
+           {
+            courses.map (course => <Course course={course}></Course>)
+           }
         </div>
     );
 };
