@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Course from './Course';
 
-const Courses = () => {
+const Courses = ({priceCalc}) => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         fetch('/public/data/courses.json')
@@ -13,7 +13,7 @@ const Courses = () => {
     return (
         <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-1'>
            {
-            courses.map (course => <Course course={course}></Course>)
+            courses.map (course => <Course course={course} priceCalc={priceCalc}></Course>)
            }
         </div>
     );
