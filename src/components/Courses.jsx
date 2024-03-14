@@ -6,7 +6,13 @@ import Course from './Course';
 const Courses = ({priceCalc}) => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('/public/courses.json')
+        fetch(`/public/courses.json`, {
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }
+      
+          })
             .then(response => response.json())
             .then(data => setCourses(data))
     }, [])
