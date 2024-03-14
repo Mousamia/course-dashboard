@@ -6,25 +6,14 @@ import Course from './Course';
 const Courses = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch('/public/data/courses.json');
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            const jsonData = await response.json();
-            setCourses(jsonData);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData(); // Call the async function
+        fetch('/public/data/courses.json')
+        .then (res => res.json())
+        .then (data => setCourses(data))
       }, []);
     return (
         <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-1'>
            {
-            courses.map (course => <Course course={course}></Course>)
+            courses?.map (course => <Course course={course}></Course>)
            }
         </div>
     );
