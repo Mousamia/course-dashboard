@@ -6,7 +6,7 @@ import Course from './Course';
 const Courses = ({priceCalc}) => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('https://github.com/Mousamia/course-dashboard/blob/main/public/courses.json')
+        fetch('/public/courses.json')
             .then(response => response.json())
             .then(data => setCourses(data))
     }, [])
