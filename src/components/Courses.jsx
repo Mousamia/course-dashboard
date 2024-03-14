@@ -3,24 +3,25 @@
 import React, { useEffect, useState } from 'react';
 import Course from './Course';
 
-const Courses = ({priceCalc}) => {
+const Courses = ({ priceCalc }) => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch(`public/data/courses.json`, {
-            headers : { 
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-             }
-      
-          })
-            .then(response => response.json())
-            .then(data => setCourses(data))
+        const setCourses = async () => {
+            const response = await fetch('/public/data/courses.json')
+            const json = await response.json()
+            console.log(response.ok)
+            if (response.ok) {
+                setCourses(json)
+            }
+        }
+
+        setCourses()
     }, [])
     return (
         <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-1'>
-           {
-            courses.map (course => <Course course={course} priceCalc={priceCalc}></Course>)
-           }
+            {
+                courses.map(course => <Course course={course} priceCalc={priceCalc}></Course>)
+            }
         </div>
     );
 };
