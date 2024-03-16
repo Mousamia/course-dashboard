@@ -7,19 +7,27 @@ import Courses from './components/Courses'
 
 function App() {
   const [marked, setMarked] = useState([]);
-  const [totalPrice, settotalPrice] = useState(222);
-  console.log(totalPrice);
-console.log(typeof(totalPrice));
+  const [totalPrice, settotalPrice] = useState(0);
+  const [totalCredit, settotalCredit] = useState(0);
 
   const priceCalc = (markedCourse,  price,credits) =>{
-    const onlyPrice = parseInt(price.replace('$', ''));
-    // console.log(onlyPrice);
-    console.log(typeof(onlyPrice));
-    const newPrice = totalPrice + onlyPrice;
-    settotalPrice(newPrice);
     const newMarked = [...marked, markedCourse];
+    console.log(price);
+    console.log(credits);
     setMarked(newMarked);
+
+    // price change
+
+    const newPrice = totalPrice + price;
+    settotalPrice(newPrice);
+
+    // credit change
+
+    const newCredit = totalCredit + credits;
+    settotalCredit(newCredit);
+
 }
+
 
   return (
     <>
@@ -27,13 +35,13 @@ console.log(typeof(totalPrice));
       <div className="container grid md:grid-cols-4 lg:grid-cols-4 sm:grid-cols-1 ">
         <div className='col-span-3'>
           <h2 className="text-center text-3xl">Available Courses</h2>
-          <Courses priceCalc={priceCalc}></Courses>
+          <Courses priceCalc={priceCalc} ></Courses>
         </div>
 
       {/* Course Quantity */}
 
         <div>
-          <CourseQuantity marked={marked}>
+          <CourseQuantity marked={marked} totalPrice={totalPrice} totalCredit={totalCredit}>
 
           </CourseQuantity>
         </div>

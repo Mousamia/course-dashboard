@@ -1,12 +1,18 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 
 const CourseDetails = ({ mark }) => {
-    // console.log(mark);
     const { course_id, course_name, instructor, image_url, price, credits } = mark;
+    // console.log(mark);
+    // const [totalPrice, settotalPrice] = useState(0);
+    // const onlyPrice = parseInt(price.replace('$', ''));
+    // const newprice = totalPrice + onlyPrice;
+
+    // settotalPrice(newprice);
+
 
     return (
         <>
