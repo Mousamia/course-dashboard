@@ -1,13 +1,17 @@
 /* eslint-disable no-unused-vars */
 
+import { useState } from 'react'
 import './App.css'
 import CourseQuantity from './components/CourseQuantity'
 import Courses from './components/Courses'
 
 function App() {
+  const [marked, setMarked] = useState([]);
 
-  const priceCalc = (creditNumber) =>{
-    console.log(creditNumber);
+  const priceCalc = (markedCourse) =>{
+    console.log(markedCourse);
+    const newMarked = [...marked, markedCourse];
+    setMarked(newMarked);
 }
 
   return (
@@ -22,7 +26,9 @@ function App() {
       {/* Course Quantity */}
 
         <div>
-          <CourseQuantity></CourseQuantity>
+          <CourseQuantity marked={marked}>
+            
+          </CourseQuantity>
         </div>
       </div>
 
