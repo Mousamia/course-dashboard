@@ -12,7 +12,7 @@ const Course = ({course, priceCalc}) => {
             <img src={image_url} className='lg:w-full h-40 sm:w-auto' alt="" />
             <h2 className='text-xl mt-2 text-blue-400'>{course_name} </h2>
             <h2 className='text-blue-300'>Instructor: <span className='text-sm font-italic'>{instructor}</span>  </h2>
-            <button onClick={() =>priceCalc( price,credits)} id="btn-credit" className="bg-blue-600 px-4 py-2 mr-2 mt-2">Credit {credits} </button>
+            <button onClick={() =>priceCalc(course, price,credits)} id="btn-credit" className="bg-blue-600 px-4 py-2 mr-2 mt-2">Credit {credits} </button>
             <button id="btn-credit" className="bg-yellow-600 px-4 py-2 lg:ml-2">Price {price} </button>
 
         </div>

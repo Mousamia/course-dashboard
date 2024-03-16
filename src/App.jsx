@@ -7,9 +7,16 @@ import Courses from './components/Courses'
 
 function App() {
   const [marked, setMarked] = useState([]);
+  const [totalPrice, settotalPrice] = useState(222);
+  console.log(totalPrice);
+console.log(typeof(totalPrice));
 
-  const priceCalc = (markedCourse) =>{
-    console.log(markedCourse);
+  const priceCalc = (markedCourse,  price,credits) =>{
+    const onlyPrice = parseInt(price.replace('$', ''));
+    // console.log(onlyPrice);
+    console.log(typeof(onlyPrice));
+    const newPrice = totalPrice + onlyPrice;
+    settotalPrice(newPrice);
     const newMarked = [...marked, markedCourse];
     setMarked(newMarked);
 }
@@ -27,7 +34,7 @@ function App() {
 
         <div>
           <CourseQuantity marked={marked}>
-            
+
           </CourseQuantity>
         </div>
       </div>

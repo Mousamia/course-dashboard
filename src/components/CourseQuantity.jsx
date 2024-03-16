@@ -12,7 +12,7 @@ const CourseQuantity = ({marked}) => {
             <h3 className="text-xl mt-2 text-slate-300">Credits Left:</h3>
             <h3 className="text-xl mt-2 text-slate-300">Total Credits :</h3>
           {
-            marked.map(mark => <CourseDetails mark={mark}></CourseDetails>)
+            marked.map(mark => <CourseDetails key={mark.course_id} mark={mark}></CourseDetails>)
           }
         </div>
     );
