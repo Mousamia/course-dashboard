@@ -6,8 +6,6 @@ import CourseDetails from './CourseDetails';
 
 const CourseQuantity = ({marked, totalPrice, totalCredit}) => {
 
-
-    console.log(marked);
     console.log("tottlll",totalPrice);
     console.log("tottlll",totalCredit);
 
