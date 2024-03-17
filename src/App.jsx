@@ -18,13 +18,16 @@ function App() {
 
     // price change
 
-    const newPrice = totalPrice + price;
+    const newPrice = totalPrice + parseInt(price.replace('$',''));
     settotalPrice(newPrice);
 
     // credit change
 
     const newCredit = totalCredit + credits;
     settotalCredit(newCredit);
+
+    if(totalCredit  <= 20)
+    alert("you can have at most 20 credit")
 
 }
 
